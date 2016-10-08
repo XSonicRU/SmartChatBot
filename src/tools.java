@@ -30,7 +30,7 @@ public class tools {
                     while (input.charAt(i) == ' '){
                         i++;
                     }
-                    indexoflastfoundseparator = i-1;
+                    indexoflastfoundseparator = i;
                 }
             }
             if (buf == ' ') {

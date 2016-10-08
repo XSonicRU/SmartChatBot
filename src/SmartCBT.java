@@ -5,8 +5,9 @@ import java.io.IOException;
 
 public class SmartCBT {
     File f = new File(new File(".").getAbsolutePath() + "CBTdata.txt");
-    FileInputStream reader = new FileInputStream(f);
-    FileOutputStream writer = new FileOutputStream(f);
+    FileInputStream reader;
+    FileOutputStream writer;
+
     public SmartCBT() throws IOException {
         if (!f.exists()) {
             if (f.createNewFile()) {
@@ -15,7 +16,8 @@ public class SmartCBT {
             } else {
                 System.out.println("Error in createNewFile function.");
             }
-
+            reader = new FileInputStream(f);
+            writer = new FileOutputStream(f);
         }
     }
 
