@@ -3,12 +3,12 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class SmartCBT {
-    File f = new File(new File(".").getAbsolutePath() + "CBTdata.txt");
-    FileInputStream reader;
-    FileOutputStream writer;
+class SmartCBT {
+    private FileInputStream reader;
+    private FileOutputStream writer;
 
-    public SmartCBT() throws IOException {
+    SmartCBT() throws IOException {
+        File f = new File(new File(".").getAbsolutePath() + "CBTdata.txt");
         if (!f.exists()) {
             if (f.createNewFile()) {
                 System.out.println("CBT's data is not exist. It was created, but CBT does nothing now.");
@@ -21,7 +21,7 @@ public class SmartCBT {
         }
     }
 
-    public String run(String input) throws IOException {
+    String run(String input) throws IOException {
         byte[] file = new byte[reader.available()];
         reader.read(file);
         String sfile = new String(tools.bytetochararray(file));

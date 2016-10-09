@@ -1,4 +1,4 @@
-public class tools {
+class tools {
     public static String[] wordsarray(String input) {
         input = input.trim();
         int a = 0;
@@ -46,7 +46,7 @@ public class tools {
         return result;
     }
 
-    public static char[] bytetochararray(byte[] array) {
+    static char[] bytetochararray(byte[] array) {
         char[] result = new char[array.length];
         for (int i = 0; i < array.length; i++) {
             result[i] = (char) array[i];
