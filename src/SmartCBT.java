@@ -25,6 +25,10 @@ class SmartCBT {
         byte[] file = new byte[reader.available()];
         reader.read(file);
         String sfile = new String(tools.bytetochararray(file));
+        String tocheck = tools.wordarraytostr(tools.wordsarray(input));
+        if(sfile.contains(tocheck)){
+            sfile.indexOf(tocheck);
+        }
         return null;
     }
 }

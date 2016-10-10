@@ -1,4 +1,11 @@
 class tools {
+    public static String wordarraytostr(String[] arr){
+        String result = arr[0];
+        for(String a:arr){
+            result = result + " " + a;
+        }
+        return result;
+    }
     public static String[] wordsarray(String input) {
         input = input.trim();
         int a = 0;
