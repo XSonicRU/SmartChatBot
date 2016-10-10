@@ -1,12 +1,24 @@
+import java.io.*;
+
 class tools {
-    public static String wordarraytostr(String[] arr){
+    static String filereader(FileInputStream reader) throws IOException {
+        byte[] file = new byte[reader.available()];
+        reader.read(file);
+        String result = new String(tools.bytetochararray(file));
+        return result;
+    }
+    static String readit() throws IOException {
+        return new BufferedReader(new InputStreamReader(System.in)).readLine();
+    }
+
+    static String wordarraytostr(String[] arr){
         String result = arr[0];
         for(String a:arr){
             result = result + " " + a;
         }
         return result;
     }
-    public static String[] wordsarray(String input) {
+    static String[] wordsarray(String input) {
         input = input.trim();
         int a = 0;
         for (int i = 0; i < input.length(); i++) {
